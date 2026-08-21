@@ -1,27 +1,27 @@
-variable region_name {
-    type = string
+variable "project_name" {
+  type = string
 }
 
-variable vpc_cidr {
-    type = string
+variable "environment" {
+  type = string
 }
 
-variable public_subnets {
-    type = map(string)
+variable "aws_region" {
+  type = string
 }
 
-variable private_subnets {
-    type = map(string)
+variable "vpc_cidr" {
+  type = string
 }
 
-variable availability_zones {
-    type = list(string)
+variable "public_subnets" {
+  type = map(string)
 }
 
-variable instance_type {
-    type = string
+variable "private_subnets" {
+  type = map(string)
 }
 
-variable tags {
-    type  = map(string)
+variable "admin_cidr" {
+  type = string
 }
