@@ -10,10 +10,10 @@ locals {
   public_rt_name  = "${var.project_name}-${var.environment}-public-rt"
   private_rt_name = "${var.project_name}-${var.environment}-private-rt"
 
-  public_sg_name  = "${var.project_name}-${var.environment}-public-sg"
-  private_sg_name = "${var.project_name}-${var.environment}-private-sg"
-  alb_sg_name     = "${var.project_name}-${var.environment}-alb-sg"
+  public_sg_name = "${var.project_name}-${var.environment}-public-sg"
+  ec2_sg_name    = "${var.project_name}-${var.environment}-ec2-sg"
+  alb_sg_name    = "${var.project_name}-${var.environment}-alb-sg"
 
-  ec2_name        = "${var.project_name}-${var.environment}-ec2"
-  alb_name        = "${var.project_name}-${var.environment}-alb"
+  ec2_name = "${var.project_name}-${var.environment}-ec2"
+  alb_name = "${var.project_name}-${var.environment}-alb"
 }

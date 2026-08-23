@@ -18,8 +18,8 @@ output "public_sg_id" {
   value = aws_security_group.public_sg.id
 }
 
-output "private_sg_id" {
-  value = aws_security_group.private_sg.id
+output "ec2_sg_id" {
+  value = aws_security_group.ec2_sg.id
 }
 
 output "alb_sg_id" {
@@ -27,13 +27,13 @@ output "alb_sg_id" {
 }
 
 output "instance_ids" {
-    value = aws_instance.ec2_private.id
+  value = aws_instance.ec2_private.id
 }
 
 output "private_ips" {
-    value = aws_instance.ec2_private.private_ip
+  value = aws_instance.ec2_private.private_ip
 }
 
 output "alb_dns_name" {
-    value = aws_alb.main.dns_name
+  value = aws_alb.main.dns_name
 }

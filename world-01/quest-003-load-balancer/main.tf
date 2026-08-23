@@ -99,13 +99,13 @@ resource "aws_security_group" "public_sg" {
   })
 }
 
-resource "aws_security_group" "private_sg" {
-  name        = local.private_sg_name
-  description = "private_security_group"
+resource "aws_security_group" "ec2_sg" {
+  name        = local.ec2_sg_name
+  description = "ec2_security_group"
   vpc_id      = aws_vpc.main.id
 
   tags = merge(local.common_tags, {
-    Name = local.private_sg_name
+    Name = local.ec2_sg_name
   })
 }
 
@@ -140,8 +140,8 @@ resource "aws_vpc_security_group_ingress_rule" "alb_http" {
 }
 
 # Private:ALB SGからHTTPのみ
-resource "aws_vpc_security_group_ingress_rule" "private_http" {
-  security_group_id = aws_security_group.private_sg.id
+resource "aws_vpc_security_group_ingress_rule" "ec2_http" {
+  security_group_id = aws_security_group.ec2_sg.id
 
   referenced_security_group_id = aws_security_group.alb_sg.id
   from_port                    = 80
@@ -156,8 +156,8 @@ resource "aws_vpc_security_group_egress_rule" "public_all" {
   ip_protocol = "-1"
 }
 
-resource "aws_vpc_security_group_egress_rule" "private_all" {
-  security_group_id = aws_security_group.private_sg.id
+resource "aws_vpc_security_group_egress_rule" "ec2_all" {
+  security_group_id = aws_security_group.ec2_sg.id
 
   cidr_ipv4   = "0.0.0.0/0"
   ip_protocol = "-1"
@@ -176,7 +176,7 @@ data "aws_ami" "al2023" {
   owners      = ["amazon"]
 
   filter {
-    name  = "name"
+    name   = "name"
     values = ["al2023-ami-2023*-x86_64"]
   }
 
@@ -189,18 +189,18 @@ data "aws_ami" "al2023" {
 resource "aws_instance" "ec2_private" {
   ami                    = data.aws_ami.al2023.id
   instance_type          = var.instance_type
-  subnet_id              = aws_subnet.private["ap-northeast-1a"].id
-  vpc_security_group_ids = [ aws_security_group.private_sg.id ]
+  subnet_id              = aws_subnet.public["ap-northeast-1a"].id
+  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
   user_data = <<-EOF
     #!/bin/bash
     dnf install -y httpd
     systemctl enable httpd
     systemctl start httpd
-    echo "Hello AWS QUEST" > /var/www/html/index.html
+    echo "AWS QUEST LEVEL UP!" > /var/www/html/index.html
   EOF
 
-  tags = merge (local.common_tags, {
+  tags = merge(local.common_tags, {
     Name = local.ec2_name
   })
 }
@@ -210,20 +210,20 @@ resource "aws_alb" "main" {
   name               = local.alb_name
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = values(aws_subnet.public.*.id)
+  subnets            = [for subnet in aws_subnet.public : subnet.id]
 
-  tags = merge (local.common_tags, {
+  tags = merge(local.common_tags, {
     Name = local.alb_name
   })
 }
 
 resource "aws_lb_target_group" "main" {
-  name = local.alb_name
-  port = 80
+  name     = local.alb_name
+  port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
 
-  tags = merge (local.common_tags, {
+  tags = merge(local.common_tags, {
     Name = local.alb_name
   })
 }
