@@ -12,11 +12,13 @@
 
 ## 🧩 構成
 
+```text
 Python Code
 └─ archive_file（ZIP）
    └─ Lambda
       ├─ IAM Execution Role
       └─ CloudWatch Logs
+```
 
 ## 💡 学んだこと
 - Lambda単体を試すだけならVPCや外部トリガーは不要

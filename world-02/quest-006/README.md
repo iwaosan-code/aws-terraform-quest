@@ -13,6 +13,7 @@
 
 ## 🧩 構成
 
+```text
 S3 Bucket
    │ ObjectCreated
    │ Event Notification
@@ -28,6 +29,7 @@ Lambda
    │
    ▼
 CloudWatch Logs
+```
 
 ## 💡 学んだこと
 - S3 Event Notificationを使ってLambdaを直接起動できる

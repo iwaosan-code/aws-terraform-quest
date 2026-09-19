@@ -11,9 +11,11 @@
 
 ## 🧩 構成
 
+```text
 Internet
 └─ ALB（Public Subnets）
    └─ EC2（Private Subnet）
+```
 
 ## 💡 学んだこと
 - Internet-facing ALBでは複数AZのSubnetを指定する

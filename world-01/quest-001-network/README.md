@@ -10,11 +10,13 @@
 
 ## 🧩 構成
 
+```text
 VPC
 ├─ Public Subnet（1a / 1c）
 ├─ Private Subnet（1a / 1c）
 ├─ Internet Gateway
 └─ Route Table（Public / Private）
+```
 
 ## 💡 学んだこと
 - Subnetはネットワーク上の「入れ物」で、Public / Privateはルーティングによって決まる

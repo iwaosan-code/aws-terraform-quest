@@ -12,12 +12,14 @@
 
 ## 🧩 構成
 
+```text
 S3 Bucket
 ├─ Public Access Block
 ├─ Versioning
 ├─ SSE-S3
 ├─ Ownership Controls
 └─ test.txt
+```
 
 ## 💡 学んだこと
 - S3 Bucket名はグローバルで一意

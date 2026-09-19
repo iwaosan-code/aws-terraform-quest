@@ -11,6 +11,7 @@
 
 ## 🧩 構成
 
+```text
 Internet
 └─ ALB（Public Subnet 1a / 1c）
    └─ EC2（Private Subnet 1a）
@@ -19,6 +20,7 @@ Internet
 Management
 └─ Systems Manager Session Manager
    └─ IAM Role → EC2
+```
 
 ## 💡 学んだこと
 - ハンズオンでは可用性とコストのバランスを考える

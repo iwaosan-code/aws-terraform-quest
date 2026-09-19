@@ -9,10 +9,12 @@
 
 ## 🧩 構成
 
+```text
 Security Groups
 ├─ Public SG
 ├─ Private SG
 └─ ALB SG
+```
 
 ## 💡 学んだこと
 - Security Groupはリソースに適用するステートフルなFirewall
