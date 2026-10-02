@@ -20,7 +20,7 @@ AIにTerraformコードを生成させること自体を目的とせず、
 | World | Theme | Progress | Status |
 |---|---|---|---|
 | WORLD 1 | Network / EC2 / ALB | QUEST 001-003 / MIMIC 001 / BOSS 001 | ✅ CLEAR |
-| WORLD 2 | Serverless | QUEST 004-009 CLEAR / MIMIC 002 NEXT / BOSS 002 | ⚔️ ACTIVE |
+| WORLD 2 | Serverless | QUEST 004-009 / MIMIC 002 CLEAR / BOSS 002 NEXT | ⚔️ ACTIVE |
 | WORLD 3 | Database | - | 🔒 |
 | WORLD 4 | API / Integration | - | 🔒 |
 | WORLD 5 | Security | - | 🔒 |
