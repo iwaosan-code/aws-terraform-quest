@@ -1,0 +1,4 @@
+{
+    "Statement":  "SELECT * FROM \"aws-quest-dev-quest-011-records\" WHERE \"action\" = \u0027battle\u0027",
+    "ReturnConsumedCapacity":  "TOTAL"
+}
