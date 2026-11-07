@@ -1,0 +1,6 @@
+adventurer_id,recorded_at,action,exp
+hero-001,2026-10-31T10:00:00Z,battle,100
+hero-001,2026-10-31T11:00:00Z,explore,20
+hero-002,2026-10-31T12:00:00Z,battle,150
+hero-003,2026-10-31T13:00:00Z,rest,0
+hero-003,2026-10-31T14:00:00Z,battle,200

@@ -21,7 +21,7 @@ AIにTerraformコードを生成させること自体を目的とせず、
 |---|---|---|---|
 | WORLD 1 | Network / EC2 / ALB | QUEST 001-003 / MIMIC 001 / BOSS 001 | ✅ CLEAR |
 | WORLD 2 | サーバーレスの森 | QUEST 004-009 / MIMIC 002 / BOSS 002 | 🏆 CLEAR |
-| WORLD 3 | Database | - | 🔒 |
+| WORLD 3 | データの王国 | QUEST 010-013 | ⚔️ 攻略中 |
 | WORLD 4 | API / Integration | - | 🔒 |
 | WORLD 5 | Security | - | 🔒 |
 | WORLD 6 | Container | - | 🔒 |
