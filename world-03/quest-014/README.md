@@ -22,7 +22,7 @@ DynamoDB StreamsとLambdaを連携させ、DynamoDBのデータ変更を検知�
 **DynamoDBテーブル**
 - テーブル名：`aws-quest-dev-quest-014-items`
 - 課金方式：`PAY_PER_REQUEST`
-- PK：`adventurer_id`（String）
+- PK：`adventure_id`（String）
 - SK：`recorded_at`（String）
 - Streams：`NEW_AND_OLD_IMAGES`
 
